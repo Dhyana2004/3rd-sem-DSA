@@ -33,15 +33,18 @@ void convert(){
     while(infix[i]!='\0'){
         if(isalnum(infix[i])){
             postfix[j++]=infix[i++];
-        }else if (infix[i]=='('){
+        }
+        else if (infix[i]=='('){
             push(infix[i++]);
-        }else if(infix[i]==')'){
+        }
+        else if(infix[i]==')'){
             while(infix[top]!='(') {
                 postfix[j++]=pop();
             }
             pop();
             i++;
-        } else {
+        }
+        else {
             while(top>=0 && precedence(infix[top])>=precedence(infix[i])) {
                 postfix[j++]=pop();
             }
