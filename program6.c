@@ -10,7 +10,7 @@ void insert(){
         return;
     }
     printf("\nEnter element to be inserted\n");
-    scanf("\n%c",&e);//Very important line
+    scanf("\n%c",&e);
     r=(r+1)%MAX;
     q[r]=e;
 }
@@ -22,24 +22,25 @@ void delete(){
     f=(f+1)%MAX;
     printf("\nThe element being dequeued is %c\n",q[f]);
 }
-void display(){
-    if(f==r){
+void display() {
+    if (f == r) {
         printf("\nEmpty Queue\n");
         return;
     }
-    int i=f;
+    int i = f;
     printf("\nThe elements of the queue are:\n");
-    while(i!=r){
-        i=(i+1)%MAX;
-        printf("%c ",q[i]);
+    while (i != r) {
+        i = (i + 1) % MAX;
+        printf("%c ", q[i]);
     }
+    printf("%c", q[r]); // Print the last element
 }
 int main(){
     int ch;
-    printf("\nMENU\n1.Insert\n2.Delete\n3.Display\n4.Exit\n");
     while(1){
-        printf("\nEnter your choice\n");
-        scanf("%d",&ch);
+    printf("\nMENU\n1.Insert\n2.Delete\n3.Display\n4.Exit\n");
+    printf("\nEnter your choice\n");
+    scanf("%d",&ch);
         switch(ch){
             case 1: insert();
                     break;
@@ -49,5 +50,5 @@ int main(){
                     break;
             case 4: exit(0);
         }
-    }
+}
 }
